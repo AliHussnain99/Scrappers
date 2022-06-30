@@ -1,2 +1,2 @@
 # Scrappers
-This repo contains site scrappers
+This repo contains scrappers for multiple sites.
