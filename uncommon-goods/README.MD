@@ -19,3 +19,14 @@ Sample JSON
   "product_url": "https://www.uncommongoods.com/product/kids-paint-by-numbers-kit"
 }
 ```
+Website: https://www.discoverahobby.com/
+
+Sample JSON
+```json
+{
+  "name": "Cats",
+  "image": "https://www.discoverahobby.com//uploads/activity/284_1563470968-304x207.jpeg?token=62e5863581458a5fa04b0e56e73e624d",
+  "category": "Pets",
+  "hobby_detail_url": "https://www.discoverahobby.com/cats"
+}
+```
