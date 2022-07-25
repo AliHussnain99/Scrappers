@@ -13,14 +13,9 @@ class DiscoverhobbiesSpider(scrapy.Spider):
     }
 
     def parse(self, response):
-        categories_urls = response.xpath(
-            '//div[@id="categories-wrap"]//div[@class="col-lg-3 col-md-6 category-item"]//a/@href').getall()
-        categories_texts = response.xpath(
-            '//div[@id="categories-wrap"]//div[@class="col-lg-3 col-md-6 category-item"]//h4/text()').getall()
-        for i, url in enumerate(categories_urls):
-            meta = {
-                'category': categories_texts[i],
-            }
+        for category in response.xpath('//div[@id="categories-wrap"]//div[@class="col-lg-3 col-md-6 category-item"]'):
+            meta = {'category': category.xpath('.//h4/text()').get()}
+            url = category.xpath('.//a/@href').get()
             yield scrapy.Request(url=url, meta=meta, callback=self.parse_category)
 
     def parse_category(self, response):
